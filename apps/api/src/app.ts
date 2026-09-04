@@ -1,6 +1,7 @@
 import express, { Express, Request, Response } from "express";
 import cors from "cors";
 import uploadRouter from "./routes/upload";
+import authRouter from "./routes/auth";
 
 export const createApp = (): Express => {
   const app = express();
@@ -21,6 +22,8 @@ export const createApp = (): Express => {
 
   // Routes
   app.use("/api/upload", uploadRouter);
+  app.use("/api/auth", authRouter);
 
   return app;
 };
+

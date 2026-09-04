@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
+import { Providers } from "./providers";
 
 export const metadata: Metadata = {
   title: "Slipstream | Mobile Expense & Bill Splitter",
@@ -28,10 +29,13 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body className="bg-[#090d16] text-slate-100 min-h-screen antialiased selection:bg-indigo-500 selection:text-white">
-        <main className="max-w-md mx-auto min-h-screen relative flex flex-col pb-20 shadow-2xl border-x border-white/5">
-          {children}
-        </main>
+        <Providers>
+          <main className="max-w-md mx-auto min-h-screen relative flex flex-col pb-20 shadow-2xl border-x border-white/5">
+            {children}
+          </main>
+        </Providers>
       </body>
     </html>
   );
 }
+
