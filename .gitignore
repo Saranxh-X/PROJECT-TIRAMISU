@@ -1,0 +1,4 @@
+node_modules
+.next
+.ds_store
+*.log
